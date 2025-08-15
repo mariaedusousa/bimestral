@@ -1,17 +1,30 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
-    int N, i,j;
-    int num=1;
-    printf("informe um numero inteiro positivo:");
-    scanf("%d",&N);
-    
-    for(i=1;i<=N;i++){
-        for(j=1;j<=i;j++){
-            printf("%d",num);
+int main() {
+    int N, i, j;
+    int num = 1;
+
+    printf("digite um numiru positible: ");
+    scanf("%d", &N);
+
+    if (N <= 0) {
+        printf("O numiru tem que ser maior que 0!\n");
+        return 1;
+    }
+
+    for (i = 1; i <= N; i++) {
+        for (j = 1; j <= i; j++) {
+            if (num > N) {
+                break;
+            }
+            printf("%d ", num);
             num++;
         }
-        printf("\n",&N);
+        if (num > N) {
+            break;
+        }
+        printf("\n");
     }
+
     return 0;
 }
